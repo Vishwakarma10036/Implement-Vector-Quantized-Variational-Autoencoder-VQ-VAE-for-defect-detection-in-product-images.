@@ -2,7 +2,6 @@
 
 The VQ-VAE is a type of generative model that combines variational inference with vector quantization to learn discrete latent representations of image data. Unlike traditional autoencoders, VQ-VAE encodes input images into discrete latent codes, which improves the quality and interpretability of reconstructions, making it suitable for applications like anomaly detection.
 ![image](https://github.com/user-attachments/assets/d5b6797b-4147-48f6-834c-858f2a7fcec1)
-                              Fig 1: VQ-VAE Architecture
 Fig 1 shows various top level components in the architecture along with dimensions at each step. Assuming we run our model over image data, here’s some nomenclature we’ll be using going forward:
 n : batch size
 h: image height
@@ -12,7 +11,6 @@ d: number of channels in the hidden state
 
 # Vector Quantization Layer
 ![image](https://github.com/user-attachments/assets/67fbcc4e-6c2f-4e2d-abe0-de795864b7c4)
-                            Fig 2: Vector Quantization Layer
 The working of VQ layer can be explained in six steps as numbered in Fig 2:
 
 Reshape: all dimensions except the last one are combined into one so that we have n*h*w vectors each of dimensionality d
