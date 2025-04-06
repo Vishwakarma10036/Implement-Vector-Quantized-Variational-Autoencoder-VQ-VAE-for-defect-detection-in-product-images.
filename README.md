@@ -43,9 +43,8 @@ By computing the pixel-wise difference between the original and reconstructed im
 > Anomaly detection in packaging, electronics, and mechanical parts
 > Visual inspection automation where labeled defect data is limited or unavailable
 > This approach offers a scalable and efficient solution to detect and localize defects, reducing human effort and enhancing inspection reliability. The project can be easily customized for different types of products by training on relevant image datasets.
->
-> # Conclusion
+
+# Conclusion
 >The implementation of Vector Quantized Variational Autoencoder (VQ-VAE) for defect detection demonstrates the potential of unsupervised learning in industrial quality inspection tasks. By learning to reconstruct only normal (defect-free) patterns, the model effectively identifies deviations or anomalies in unseen data without the need for labeled defect samples.
 > This approach not only simplifies the training process but also makes the solution scalable and adaptable to various product types and defect categories. With its strong reconstruction capabilities and efficient anomaly localization, VQ-VAE provides a powerful and interpretable framework for automated visual inspection.
 > Future improvements could include integrating real-time deployment pipelines, optimizing model performance for edge devices, and combining VQ-VAE with attention mechanisms or other hybrid models for enhanced precision.
-
