@@ -14,12 +14,17 @@ d: number of channels in the hidden state
 # Vector Quantization Layer
 ![image](https://github.com/user-attachments/assets/67fbcc4e-6c2f-4e2d-abe0-de795864b7c4)
 The working of VQ layer can be explained in six steps as numbered in Fig 2:
-> Reshape: all dimensions except the last one are combined into one so that we have n*h*w vectors each of dimensionality d
-> Calculating distances: for each of the n*h*w vectors we calculate distance from each of k vectors of the embedding dictionary to obtain a matrix of shape (n*h*w, k)
-> Argmin: for each of the n*h*w vectors we find the the index of closest of the k vectors from dictionary
-> Index from dictionary: index the closest vector from the dictionary for each of n*h*w vectors
-> Reshape: convert back to shape (n, h, w, d)
-> Copying gradients: If you followed up till now you’d realize that it’s not possible to train this architecture through backpropagation as the gradient won’t flow through argmin. Hence we try to approximate by copying the gradients from z_q back to z_e. In this way we’re not actually minimizing the loss function but are still able to pass some information back for training.
+1. Reshape: all dimensions except the last one are combined into one so that we have n*h*w vectors each of dimensionality d
+
+2. Calculating distances: for each of the n*h*w vectors we calculate distance from each of k vectors of the embedding dictionary to obtain a matrix of shape (n*h*w, k)
+
+3. Argmin: for each of the n*h*w vectors we find the the index of closest of the k vectors from dictionary
+
+4. Index from dictionary: index the closest vector from the dictionary for each of n*h*w vectors
+
+5. Reshape: convert back to shape (n, h, w, d)
+
+6. Copying gradients: If you followed up till now you’d realize that it’s not possible to train this architecture through backpropagation as the gradient won’t flow through argmin. Hence we try to approximate by copying the gradients from z_q back to z_e. In this way we’re not actually minimizing the loss function but are still able to pass some information back for training.
 
 # How It Works
 The model is trained exclusively on defect-free (normal) product images. During training, it learns the distribution and structural patterns of these normal images. At inference time, the model attempts to reconstruct new input images. Since it has never seen defective samples, it fails to accurately reconstruct anomalous regions, resulting in higher reconstruction errors in those areas.
