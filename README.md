@@ -5,11 +5,12 @@ The VQ-VAE is a type of generative model that combines variational inference wit
 # Architecture
 ![image](https://github.com/user-attachments/assets/d5b6797b-4147-48f6-834c-858f2a7fcec1)
 Fig 1 shows various top level components in the architecture along with dimensions at each step. Assuming we run our model over image data, here’s some nomenclature we’ll be using going forward:
-n : batch size
-h: image height
-w: image width
-c: number of channels in the input image
-d: number of channels in the hidden state
+
+> n : batch size
+> h: image height
+> w: image width
+> c: number of channels in the input image
+> d: number of channels in the hidden state
 
 # Vector Quantization Layer
 ![image](https://github.com/user-attachments/assets/67fbcc4e-6c2f-4e2d-abe0-de795864b7c4)
