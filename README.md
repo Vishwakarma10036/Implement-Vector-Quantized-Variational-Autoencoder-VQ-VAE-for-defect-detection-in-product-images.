@@ -1,5 +1,4 @@
 # Implement-Vector-Quantized-Variational-Autoencoder-VQ-VAE-for-defect-detection-in-product-images.
-This project implements a Vector Quantized Variational Autoencoder (VQ-VAE) model for automated defect detection in product images, leveraging the power of unsupervised learning to identify anomalies in industrial and manufacturing workflows.
 
 The VQ-VAE is a type of generative model that combines variational inference with vector quantization to learn discrete latent representations of image data. Unlike traditional autoencoders, VQ-VAE encodes input images into discrete latent codes, which improves the quality and interpretability of reconstructions, making it suitable for applications like anomaly detection.
 
